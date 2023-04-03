@@ -1,0 +1,118 @@
+<form action="{{ route('admin#add')}}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+    @csrf
+    <div class="form-group">
+        <label for="" class="">Item Name</label>
+        <input type="text" value="{{ old('item_name')}}" class="form-control
+        @error('item_name') is-invalid @enderror" name="itemName" placeholder="Enter Name">
+        @error('item_name')
+        <div class="invalid-feedback">{{ $message}}</div>
+
+        @enderror
+       </div>
+       <div class="form-group">
+        <label for="" class="">Select Category</label>
+        <select class="form-select form-select-lg mb-3 form-control " name="catName" aria-label=".form-select-lg example">
+            <option selected>Select Category</option>
+            <option value="">banana</option>
+
+        </select>
+
+       </div>
+
+       <div class="form-group">
+        <label for="" class="">Price</label>
+        <input type="text" value="{{ old('price')}}" class="form-control  @error('price') is-invalid @enderror" name="price" placeholder="Enter Name">
+        @error('price')
+        <div class="invalid-feedback">{{ $message}}</div>
+
+        @enderror
+       </div>
+       <div class="form-group">
+        <label for="" class="">Description</label>
+        <input type="text" value="{{ old('description')}}" class="form-control  @error('description') is-invalid @enderror" name="description" placeholder="Enter Name">
+        @error('description')
+        <div class="invalid-feedback">{{ $message}}</div>
+
+        @enderror
+       </div>
+       <div class="form-group">
+        <label for="" class="">Select Item Condition</label>
+        <select class="form-select form-select-lg mb-3 form-control " name="itemCon" aria-label=".form-select-lg example">
+            <option selected>Select Item Condition</option>
+            <option value="">Apple</option>
+
+        </select>
+
+       </div>
+       <div class="form-group">
+        <label for="" class="">Select Item Type</label>
+        <select class="form-select form-select-lg mb-3 form-control " name="itemType" aria-label=".form-select-lg example">
+            <option selected>Select Item Type</option>
+            <option value="">mango</option>
+
+        </select>
+
+       </div>
+       <div class="form-group">
+        <label for="" class="">Status</label>
+        <input type="text" value="{{ old('status')}}" class="form-control  @error('status') is-invalid @enderror" name="status" placeholder="Enter Name">
+        @error('status')
+        <div class="invalid-feedback">{{ $message}}</div>
+
+        @enderror
+       </div>
+       <div class="form-group">
+        <label for="" class="">Item Photo</label>
+        <input type="file" name="itemPhoto" class="form-control  @error('itemPhoto') is-invalid @enderror">
+        @error('itemPhoto')
+        <div class="invalid-feedback">{{ $message}}</div>
+
+        @enderror
+       </div>
+
+
+
+   <h4> Owner Information</h4>
+
+   <div class="form-group">
+    <label for="" class="">Owner Name</label>
+    <input type="text" value="{{ old('ownerName')}}" class="form-control  @error('ownerName') is-invalid @enderror" name="ownerName" placeholder="Enter Name">
+    @error('ownerName')
+    <div class="invalid-feedback">{{ $message}}</div>
+
+    @enderror
+   </div>
+   <div class="form-group">
+    <label for="" class="">Contact Number</label>
+    <input type="text" value="{{ old('contNo')}}" class="form-control  @error('contNo') is-invalid @enderror" name="contNo" placeholder="Enter Name">
+    @error('contNo')
+    <div class="invalid-feedback">{{ $message}}</div>
+
+    @enderror
+   </div>
+   <div class="form-group">
+    <label for="" class="">Address</label>
+    <input type="text" value="{{ old('address')}}" class="form-control  @error('address') is-invalid @enderror" name="address" placeholder="Enter Name">
+    @error('address')
+    <div class="invalid-feedback">{{ $message}}</div>
+
+    @enderror
+   </div>
+
+   <div class="form-group">
+    <label for="" class="">Address</label>
+    <input type="text" value="{{ old('ownerAddress')}}" class="form-control  @error('ownerAddress') is-invalid @enderror" name="ownerAddress" placeholder="Enter Name">
+    @error('ownerAddress')
+    <div class="invalid-feedback">{{ $message}}</div>
+
+    @enderror
+   </div>
+
+    <div>
+        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+            <span id="payment-button-amount">Create</span>
+            {{-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
+            <i class="fa-solid fa-circle-right"></i>
+        </button>
+    </div>
+</form>
